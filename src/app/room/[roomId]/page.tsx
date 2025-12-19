@@ -104,8 +104,10 @@ const Page = () => {
   });
 
   const copyLink = () => {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url);
+    const urlArr = window.location.href.split('/');
+    const id = urlArr[urlArr.length - 1];
+
+    navigator.clipboard.writeText(id);
     setCopyStatus('COPIED!');
     setTimeout(() => setCopyStatus('COPY'), 2000);
   };
