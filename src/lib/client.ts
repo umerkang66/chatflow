@@ -1,4 +1,9 @@
 import { treaty } from '@elysiajs/eden';
 import type { App } from '../app/api/[[...slugs]]/route';
 
-export const client = treaty<App>('localhost:3000').api;
+const baseURL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://chatflow-umer.vercel.app'
+    : 'http://localhost:3000';
+
+export const client = treaty<App>(baseURL).api;
