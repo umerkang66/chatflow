@@ -26,9 +26,9 @@ export const proxy = async (req: NextRequest) => {
   }
 
   // USER IS NOT ALLOWED TO JOIN
-  if (meta.connected.length >= 2) {
-    return NextResponse.redirect(new URL('/?error=room-full', req.url));
-  }
+  // if (meta.connected.length >= 2) {
+  //   return NextResponse.redirect(new URL('/?error=room-full', req.url));
+  // }
 
   const response = NextResponse.next();
 
