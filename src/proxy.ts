@@ -26,6 +26,7 @@ export const proxy = async (req: NextRequest) => {
   }
 
   // USER IS NOT ALLOWED TO JOIN
+  // IF ONLY 2 PEOPLE CAN JOIN THE ROOM
   // if (meta.connected.length >= 2) {
   //   return NextResponse.redirect(new URL('/?error=room-full', req.url));
   // }
